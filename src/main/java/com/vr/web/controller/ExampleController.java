@@ -1,26 +1,30 @@
 package com.vr.web.controller;
 
-import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.vr.web.service.Impl.ExampleServiceImpl;
+import com.vr.web.view.JaxbJsonView;
 
-@RequestMapping("example")
 @Controller
 public class ExampleController {
 
-	@Resource
-	private ExampleServiceImpl esxampleService;
-	Logger logger = LoggerFactory.getLogger(ExampleController.class);
+	@RequestMapping(value="/index")
+	public ModelAndView index(HttpServletRequest request, HttpServletResponse response){
+		return new ModelAndView("index");
+	}
 	
-	@RequestMapping("hello")
-	@ResponseBody
-	public String hello(){
-		return esxampleService.sayHello();
+	@RequestMapping(value="/json")
+	public ModelAndView json(HttpServletRequest request, HttpServletResponse response){
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userName", "test");
+		map.put("passWord", "test123");
+		return new ModelAndView(new JaxbJsonView(map));
 	}
 }

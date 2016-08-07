@@ -15,7 +15,6 @@ public class ExampleServiceImpl implements ExampleService{
 	private ExampleMapper exampleDao;
 	Logger logger = LoggerFactory.getLogger(ExampleServiceImpl.class);
 
-	@Override
 	public String sayHello() {
 		return "hello world." + exampleDao.getCount();
 	}
