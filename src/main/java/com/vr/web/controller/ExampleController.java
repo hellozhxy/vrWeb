@@ -20,6 +20,11 @@ public class ExampleController {
 		return new ModelAndView("index");
 	}
 	
+	@RequestMapping(value="/def")
+	public ModelAndView def(HttpServletRequest request, HttpServletResponse response){
+		return new ModelAndView("def");
+	}
+	
 	@RequestMapping(value="/json")
 	public ModelAndView json(HttpServletRequest request, HttpServletResponse response){
 		Map<String, Object> map = new HashMap<String, Object>();
