@@ -42,7 +42,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
-        <url-pattern>/upload</url-pattern>
+        <url-pattern>/doupload</url-pattern>
     </servlet-mapping>
 	
 	<servlet>

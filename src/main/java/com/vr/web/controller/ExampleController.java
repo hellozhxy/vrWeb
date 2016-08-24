@@ -32,4 +32,9 @@ public class ExampleController {
 		map.put("passWord", "test123");
 		return new ModelAndView(new JaxbJsonView(map));
 	}
+	
+	@RequestMapping(value="/upload")
+	public ModelAndView upload(HttpServletRequest request, HttpServletResponse response){
+		return new ModelAndView("upload");
+	}
 }
