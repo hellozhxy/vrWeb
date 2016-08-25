@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.vr.utils.ConfigUtil;
+import com.vr.utils.SystemProperties;
 import com.vr.utils.UploadUtils;
 
 /**
@@ -25,9 +23,6 @@ public class UploadServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 320329561881008208L;
 	
-	@Autowired
-	private ConfigUtil configUtil;
-
 	//public static final String UPLOAD_DIR = "D:\\upload";
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -84,7 +79,8 @@ public class UploadServlet extends HttpServlet {
 	}
 
 	private ResumableInfo getResumableInfo(HttpServletRequest request)throws ServletException, UnsupportedEncodingException {
-		String base_dir = configUtil.getUploadResourceDir();
+		SystemProperties.loadPropertyFile("config.properties");
+		String base_dir = SystemProperties.getProperty("upload_resource_dir");
 		int resumableChunkSize = UploadUtils.toInt(request.getParameter("resumableChunkSize"), -1);
 		long resumableTotalSize = UploadUtils.toLong(request.getParameter("resumableTotalSize"), -1);
 		String resumableIdentifier = request.getParameter("resumableIdentifier");

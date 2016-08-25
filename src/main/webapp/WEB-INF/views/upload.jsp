@@ -12,28 +12,14 @@ String path = request.getContextPath()+"/";
   </head>
   <body>
     <div id="frame">
-
-      <h1>Resumable.js</h1>
-      <p>It's a JavaScript library providing multiple simultaneous, stable and resumable uploads via the HTML5 File API.</p>
-
-      <p>The library is designed to introduce fault-tolerance into the upload of large files through HTTP. This is done by splitting each files into small chunks; whenever the upload of a chunk fails, uploading is retried until the procedure completes. This allows uploads to automatically resume uploading after a network connection is lost either locally or to the server. Additionally, it allows for users to pause and resume uploads without loosing state.</p>
-
-      <p>Resumable.js relies on the HTML5 File API and the ability to chunks files into smaller pieces. Currently, this means that support is limited to Firefox 4+ and Chrome 11+.</p>
-
-      <hr/>
-
-      <h3>Demo</h3>
       <script src="<%=path%>js/jquery.min.js"></script>
       <script src="<%=path%>js/resumable.js"></script>
-
       <div class="resumable-error">
         Your browser, unfortunately, is not supported by Resumable.js. The library requires support for <a href="http://www.w3.org/TR/FileAPI/">the HTML5 File API</a> along with <a href="http://www.w3.org/TR/FileAPI/#normalization-of-params">file slicing</a>.
       </div>
-
       <div class="resumable-drop" ondragenter="jQuery(this).addClass('resumable-dragover');" ondragend="jQuery(this).removeClass('resumable-dragover');" ondrop="jQuery(this).removeClass('resumable-dragover');">
         Drop video files here to upload or <a class="resumable-browse"><u>select from your computer</u></a>
       </div>
-      
       <div class="resumable-progress">
         <table>
           <tr>
@@ -54,7 +40,7 @@ String path = request.getContextPath()+"/";
             target:'/vrWeb/doupload',
             chunkSize:1*1024*1024,
             simultaneousUploads:4,
-            testChunks: true,
+            testChunks: false,
             throttleProgressCallbacks:1,
             method: "octet"
           });
