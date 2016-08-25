@@ -75,6 +75,7 @@ String path = request.getContextPath()+"/";
           r.on('complete', function(){
               // Hide pause/resume when the upload has completed
               $('.resumable-progress .progress-resume-link, .resumable-progress .progress-pause-link').hide();
+              $('.resumable-list').empty();
             });
           r.on('fileSuccess', function(file,message){
               // Reflect that the file upload has completed
@@ -89,7 +90,7 @@ String path = request.getContextPath()+"/";
               $('.resumable-file-'+file.uniqueIdentifier+' .resumable-file-progress').html(Math.floor(file.progress()*100) + '%');
               $('.progress-bar').css({width:Math.floor(r.progress()*100) + '%'});
               //console.log(Math.floor(r.progress()*100) + '%');
-              $('.resumable-list').html(Math.floor(r.progress()*100) + '%')
+              $('.resumable-list').html(Math.floor(r.progress()*100) + '%');
             });
         }
       </script>
