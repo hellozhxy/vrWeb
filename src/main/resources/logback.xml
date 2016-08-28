@@ -19,8 +19,8 @@
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>${log.dir}/vrWeb.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+			<maxHistory>7</maxHistory>
 		</rollingPolicy>
-		<maxHistory>7</maxHistory>
 	</appender>
 
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
@@ -30,7 +30,7 @@
 		</encoder>
 	</appender>
 	
-	<root level="DEBUG">
+	<root level="INFO">
 		<appender-ref ref="stdout" />
 	</root>
 

@@ -1,69 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="col-sm-3 col-md-2 sidebar">
 	<div class="top-navigation">
-		<div class="t-menu">MENU</div>
+		<div class="t-menu">视频分类</div>
 		<div class="t-img">
-			<img src="images/lines.png" alt="" />
+			<img src="images/lines.png" />
 		</div>
 		<div class="clearfix"></div>
-	</div>
-	<div class="drop-navigation drop-navigation">
-		<ul class="nav nav-sidebar">
-			<li class="active"><a href="<%=path%>index.do" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>IMAX视频</a></li>
-			<li><a href="#" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>3D源视频</a></li>
-			<li><a href="<%=path%>history.do" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>全景视频</a></li>
-			<li><a href="#" class="menu1"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>虚拟演播<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
-			<ul class="cl-effect-2">
-				<li><a href="movies.html">English</a></li>
-				<li><a href="movies.html">Chinese</a></li>
-				<li><a href="movies.html">Hindi</a></li>
-			</ul>
-			<!-- script-for-menu -->
-			<script>
-				$("li a.menu1").click(function() {
-					$("ul.cl-effect-2").slideToggle(300, function() {
-						// Animation complete.
-					});
-				});
-			</script>
-			<li><a href="#" class="menu"><span
-					class="glyphicon glyphicon-film glyphicon-king" aria-hidden="true"></span>协同交互<span
-					class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
-			<ul class="cl-effect-1">
-				<li><a href="#">Football</a></li>
-				<li><a href="#">Cricket</a></li>
-				<li><a href="#">Tennis</a></li>
-				<li><a href="#">Shattil</a></li>
-			</ul>
-			<!-- script-for-menu -->
-			<script>
-				$("li a.menu").click(function() {
-					$("ul.cl-effect-1").slideToggle(300, function() {
-						// Animation complete.
-					});
-				});
-			</script>
-			<li><a href="#" class="song-icon"><span
-					class="glyphicon glyphicon-music" aria-hidden="true"></span>位置跟踪</a></li>
-			<li><a href="#" class="news-icon"><span
-					class="glyphicon glyphicon-envelope" aria-hidden="true"></span>新闻资讯</a></li>
-		</ul>
 		<!-- script-for-menu -->
 		<script>
 			$(".top-navigation").click(function() {
 				$(".drop-navigation").slideToggle(300, function() {
-					// Animation complete.
+					//TODO something
 				});
 			});
 		</script>
+		<!-- script-for-menu -->
+	</div>
+	<div class="drop-navigation drop-navigation">
+		<ul class="nav nav-sidebar">
+			<li class="active"><a href="<%=path%>index.do" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>蜂窝在线</a></li>
+			<li><a href="<%=path%>index.do" ><span class="glyphicon glyphicon-music" aria-hidden="true"></span>IMAX视频</a></li>
+			<li><a href="#" ><span class="glyphicon glyphicon-film" aria-hidden="true"></span>3D源视频</a></li>
+			<li><a href="#" ><span class="glyphicon glyphicon-home glyphicon-magnet" aria-hidden="true"></span>全景视频</a></li>
+		</ul>
 		<div class="side-bottom">
 			<div class="side-bottom-icons">
 				<ul class="nav2">
-					<li><a href="#" class="facebook"> </a></li>
-					<li><a href="#" class="facebook twitter"> </a></li>
-					<li><a href="#" class="facebook chrome"> </a></li>
-					<li><a href="#" class="facebook dribbble"> </a></li>
+					<li><a href="http://weibo.com" class="facebook" target="_blank"></a></li>
+					<li><a href="http://weibo.com" class="facebook twitter" target="_blank"></a></li>
+					<li><a href="http://weibo.com" class="facebook chrome" target="_blank"></a></li>
+					<li><a href="http://weibo.com" class="facebook dribbble" target="_blank"></a></li>
 				</ul>
 			</div>
 			<div class="copyright">

@@ -9,6 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * 
+ * 主页
+ * @author xieyong
+ *
+ */
 @Controller
 public class NavigatorController {
 	
@@ -18,12 +24,6 @@ public class NavigatorController {
 	public ModelAndView index(HttpServletRequest request, HttpServletResponse response){
 		logger.info("...index....");
 		return new ModelAndView("vr/index");
-	}
-	
-	@RequestMapping(value="/detail")
-	public ModelAndView detail(HttpServletRequest request, HttpServletResponse response){
-		logger.info("...detail....");
-		return new ModelAndView("vr/single");
 	}
 	
 	@RequestMapping(value="/history")
