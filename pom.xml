@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<name>vrWeb Maven Webapp</name>
+	<name>vrWeb</name>
 	<url>http://maven.apache.org</url>
 	
 	<repositories>
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.4.0</version>
+			<version>3.4.1</version>
 		</dependency>
 
 		<!-- zookeeper -->
