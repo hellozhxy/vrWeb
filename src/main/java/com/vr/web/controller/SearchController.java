@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +22,7 @@ public class SearchController {
 	@RequestMapping(value="/search")
 	public ModelAndView detail(HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value="keyword",required=false)String keyword){
-		logger.info("...detail....keyword={}",keyword);
+		logger.info("...SearchController....keyword={}",keyword);
 		return new ModelAndView("vr/single");
 	}
 	

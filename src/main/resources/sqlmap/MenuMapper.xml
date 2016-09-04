@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vr.web.dao.MenuMapper">
+
+  <resultMap id="BaseResultMap" type="com.vr.web.model.Menu">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="place" jdbcType="INTEGER" property="place" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="domain" jdbcType="VARCHAR" property="domain" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="herf" jdbcType="VARCHAR" property="herf" />
+    <result column="rank" jdbcType="INTEGER" property="rank" />
+    <result column="css_class" jdbcType="VARCHAR" property="css" />
+  </resultMap>
+  
+  <select id="queryMenu" resultMap="BaseResultMap">
+  	SELECT * FROM tb_menu WHERE place = 0 AND deleted = 0 ORDER BY rank
+  </select>
+	  
+</mapper>
