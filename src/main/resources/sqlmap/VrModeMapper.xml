@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vr.web.dao.VrModeMapper">
+	<resultMap id="BaseResultMap" type="com.vr.web.model.VrMode">
+		<id column="vr_mode_id" jdbcType="BIGINT" property="vrModeId" />
+		<result column="vr_mode_name" jdbcType="VARCHAR" property="vrModeName" />
+		<result column="vr_mode_desc" jdbcType="VARCHAR" property="vrModeDesc" />
+		<result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value" item="listItem"
+										open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value" item="listItem"
+										open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		vr_mode_id, vr_mode_name, vr_mode_desc, img_url
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from tb_vrmode
+		where vr_mode_id = #{vrModeId,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from tb_vrmode
+		where vr_mode_id = #{vrModeId,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.vr.web.model.VrMode">
+		insert into tb_vrmode (vr_mode_id, vr_mode_name, vr_mode_desc,
+		img_url)
+		values (#{vrModeId,jdbcType=BIGINT}, #{vrModeName,jdbcType=VARCHAR},
+		#{vrModeDesc,jdbcType=VARCHAR},
+		#{imgUrl,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.vr.web.model.VrMode">
+		insert into tb_vrmode
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="vrModeId != null">
+				vr_mode_id,
+			</if>
+			<if test="vrModeName != null">
+				vr_mode_name,
+			</if>
+			<if test="vrModeDesc != null">
+				vr_mode_desc,
+			</if>
+			<if test="imgUrl != null">
+				img_url,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="vrModeId != null">
+				#{vrModeId,jdbcType=BIGINT},
+			</if>
+			<if test="vrModeName != null">
+				#{vrModeName,jdbcType=VARCHAR},
+			</if>
+			<if test="vrModeDesc != null">
+				#{vrModeDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="imgUrl != null">
+				#{imgUrl,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByExampleSelective" parameterType="map">
+		update tb_vrmode
+		<set>
+			<if test="record.vrModeId != null">
+				vr_mode_id = #{record.vrModeId,jdbcType=BIGINT},
+			</if>
+			<if test="record.vrModeName != null">
+				vr_mode_name = #{record.vrModeName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.vrModeDesc != null">
+				vr_mode_desc = #{record.vrModeDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.imgUrl != null">
+				img_url = #{record.imgUrl,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update tb_vrmode
+		set vr_mode_id = #{record.vrModeId,jdbcType=BIGINT},
+		vr_mode_name = #{record.vrModeName,jdbcType=VARCHAR},
+		vr_mode_desc = #{record.vrModeDesc,jdbcType=VARCHAR},
+		img_url = #{record.imgUrl,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective" parameterType="com.vr.web.model.VrMode">
+		update tb_vrmode
+		<set>
+			<if test="vrModeName != null">
+				vr_mode_name = #{vrModeName,jdbcType=VARCHAR},
+			</if>
+			<if test="vrModeDesc != null">
+				vr_mode_desc = #{vrModeDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="imgUrl != null">
+				img_url = #{imgUrl,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where vr_mode_id = #{vrModeId,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.vr.web.model.VrMode">
+		update tb_vrmode
+		set vr_mode_name = #{vrModeName,jdbcType=VARCHAR},
+		vr_mode_desc = #{vrModeDesc,jdbcType=VARCHAR},
+		img_url = #{imgUrl,jdbcType=VARCHAR}
+		where vr_mode_id = #{vrModeId,jdbcType=BIGINT}
+	</update>
+</mapper>

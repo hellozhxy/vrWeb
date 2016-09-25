@@ -21,10 +21,6 @@
 			<c:forEach items="${menus}" var="s">
 				<li><a href="<%=path%>${s.herf}" ><span class="${s.css}" aria-hidden="true"></span>${s.name}</a></li>
 			</c:forEach>
-			<li class="active"><a href="<%=path%>index.do" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>蜂窝在线</a></li>
-			<li><a href="<%=path%>index.do" ><span class="glyphicon glyphicon-music" aria-hidden="true"></span>IMAX视频</a></li>
-			<li><a href="#" ><span class="glyphicon glyphicon-film" aria-hidden="true"></span>3D源视频</a></li>
-			<li><a href="#" ><span class="glyphicon glyphicon-home glyphicon-magnet" aria-hidden="true"></span>全景视频</a></li>
 		</ul>
 		<div class="side-bottom">
 			<div class="side-bottom-icons">
