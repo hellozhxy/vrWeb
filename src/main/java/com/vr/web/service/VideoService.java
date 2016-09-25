@@ -20,5 +20,11 @@ public interface VideoService {
 	 */
 	Video detail(Long vid);
 
+	/**
+	 * 视频搜索
+	 * @param keyword
+	 * @return
+	 */
+	List<Video> search(String keyword);
 
 }

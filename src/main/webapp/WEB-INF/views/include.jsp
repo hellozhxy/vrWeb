@@ -17,6 +17,8 @@ String path = request.getContextPath()+"/";
 
 <!--start-smoth-scrolling-->
 <!-- fonts -->
+<%--
 <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+ --%>
 <!-- //fonts -->

@@ -325,4 +325,15 @@
 		ORDER BY play_times DESC
 		LIMIT #{limitCount}
 	</select>
+	
+	<!-- 防止sql注入 -->
+	<select id="search" parameterType="string" resultMap="BaseResultMap">
+		SELECT * FROM tb_video
+		WHERE id > 0
+		<if test="keyword!=null">
+			and keywords like CONCAT('%','${keyword}','%')
+		</if>
+		ORDER BY play_times DESC
+		LIMIT 10
+	</select>
 </mapper>

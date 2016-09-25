@@ -35,5 +35,7 @@ public interface VideoMapper {
 	 * @return
 	 */
 	Video detail(Long vid);
+
+	List<Video> search(@Param("keyword") String keyword);
     
 }

@@ -19,10 +19,11 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">
-				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="请输入搜索关键字">
+				<form class="navbar-form navbar-right" action="<%=path%>search.do" method="get">
+					<input type="text" class="form-control" name="k" placeholder="请输入搜索关键字">
+					<input type="hidden" class="form-control" name="f" value="top">
 					<!-- 搜索 -->
-					<input type="submit" value=" ">
+					<input type="submit" value="">
 				</form>
 			</div>
 			<div class="header-top-right">

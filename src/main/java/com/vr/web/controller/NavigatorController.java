@@ -63,7 +63,7 @@ public class NavigatorController {
 	
 	@RequestMapping(value="/history")
 	public ModelAndView history(HttpServletRequest request, HttpServletResponse response){
-		logger.info("...NavigatorController....");
+		logger.info("...history....");
 		return new ModelAndView("vr/history");
 	}
 	
