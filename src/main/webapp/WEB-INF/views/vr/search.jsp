@@ -36,6 +36,25 @@
 							massa nulla. Fusce convallis et sapien a hendrerit. Etiam viverra
 							maximus dolor, ac tempor sapien. </span>
 					</p>
+					<c:forEach var="s" items="${videos}">
+						<div class="history-grids">
+							<div class="col-md-1 history-left">
+								<p>2001</p>
+							</div>
+							<div class="col-md-11 history-right">
+								<h5>Praesent a dui sit amet turpis tempus gravida eu quis mi</h5>
+								<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non
+									tristique orci. Sed placerat porta justo, at sollicitudin velit.
+									Curabitur sed hendrerit justo, eu vehicula lorem. Morbi eget
+									malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed
+									placerat porta justo, at sollicitudin velit. Curabitur sed
+									hendrerit justo, eu vehicula lorem.</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</c:forEach>
+					
+					<%--
 					<div class="history-grids">
 						<div class="col-md-1 history-left">
 							<p>2001</p>
@@ -51,85 +70,7 @@
 						</div>
 						<div class="clearfix"></div>
 					</div>
-					<div class="history-grids">
-						<div class="col-md-1 history-left">
-							<p>2003</p>
-						</div>
-						<div class="col-md-11 history-right">
-							<h5>Duis iaculis justo nec tellus bibendum rhoncus pretium
-								leo</h5>
-							<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non
-								tristique orci. Sed placerat porta justo, at sollicitudin velit.
-								Curabitur sed hendrerit justo, eu vehicula lorem. Morbi eget
-								malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed
-								placerat porta justo, at sollicitudin velit. Curabitur sed
-								hendrerit justo, eu vehicula lorem.</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="history-grids">
-						<div class="col-md-1 history-left">
-							<p>2005</p>
-						</div>
-						<div class="col-md-11 history-right">
-							<h5>Class aptent taciti sociosqu ad litora torquent per
-								conubia</h5>
-							<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non
-								tristique orci. Sed placerat porta justo, at sollicitudin velit.
-								Curabitur sed hendrerit justo, eu vehicula lorem. Morbi eget
-								malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed
-								placerat porta justo, at sollicitudin velit. Curabitur sed
-								hendrerit justo, eu vehicula lorem.</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="history-grids">
-						<div class="col-md-1 history-left">
-							<p>2007</p>
-						</div>
-						<div class="col-md-11 history-right">
-							<h5>Integer sem sem, ornare id velit a, semper fringilla
-								magna</h5>
-							<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non
-								tristique orci. Sed placerat porta justo, at sollicitudin velit.
-								Curabitur sed hendrerit justo, eu vehicula lorem. Morbi eget
-								malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed
-								placerat porta justo, at sollicitudin velit. Curabitur sed
-								hendrerit justo, eu vehicula lorem.</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="history-grids">
-						<div class="col-md-1 history-left">
-							<p>2009</p>
-						</div>
-						<div class="col-md-11 history-right">
-							<h5>Praesent a dui sit amet turpis tempus gravida eu quis mi</h5>
-							<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non
-								tristique orci. Sed placerat porta justo, at sollicitudin velit.
-								Curabitur sed hendrerit justo, eu vehicula lorem. Morbi eget
-								malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed
-								placerat porta justo, at sollicitudin velit. Curabitur sed
-								hendrerit justo, eu vehicula lorem.</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="history-grids">
-						<div class="col-md-1 history-left">
-							<p>2011</p>
-						</div>
-						<div class="col-md-11 history-right">
-							<h5>Integer sem sem, ornare id velit a, semper fringilla
-								magna</h5>
-							<p>Morbi eget malesuada nunc. Nullam ac congue ipsum, non
-								tristique orci. Sed placerat porta justo, at sollicitudin velit.
-								Curabitur sed hendrerit justo, eu vehicula lorem. Morbi eget
-								malesuada nunc. Nullam ac congue ipsum, non tristique orci. Sed
-								placerat porta justo, at sollicitudin velit. Curabitur sed
-								hendrerit justo, eu vehicula lorem.</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
+					 --%>
 				</div>
 			</div>
 		</div>

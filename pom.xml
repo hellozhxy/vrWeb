@@ -24,6 +24,7 @@
 		<org.slf4j-version>1.7.21</org.slf4j-version>
 	</properties>
 
+	<!-- 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -33,6 +34,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	 -->
 
 	<dependencies>
 		<!-- mybatis -->
@@ -128,10 +130,12 @@
 			<version>1.7.9</version>
 		</dependency>
 
+		<!-- 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
+		 -->
 
 		<dependency>
 			<groupId>log4j</groupId>

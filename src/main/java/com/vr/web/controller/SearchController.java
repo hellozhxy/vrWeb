@@ -61,6 +61,8 @@ public class SearchController {
 		modelAndView.addObject("list2Title", "3D视频");
 		modelAndView.addObject("list3Title", "全景视频");
 		modelAndView.addObject("list4Title", "IMAX视频");
+		
+		modelAndView.addObject("videos", videos);
 		return modelAndView;
 	}
 	
