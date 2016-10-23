@@ -9,8 +9,8 @@
 <!--引入引导js 动态下载播放器-->
 <script language="javascript" type="text/javascript" src="<%=path %>sdk/web/player/UtoVRPlayerGuide.js"></script>
 <script type="text/javascript">
-/*播放器参数配置*/
-var vpath = "<%=basePath %>sdk/web/960p.mp4";
+/*播放器参数配置   <%=basePath %>sdk/web/960p.mp4*/
+var vpath = "${video.url}";
 var params = {
     container: document.getElementById("pano"),
     name: "videoDetail",
@@ -50,7 +50,7 @@ $(function(){
 				<div class="col-sm-8 single-left">
 					<div class="song">
 						<div class="song-info">
-							<h3>奇幻森林</h3>	
+							<h3>${video.title}</h3>	
 					</div>
 						<div class="video-grid" style="width: 800px;height: 500px; margin:10px auto;" id="pano">
 							

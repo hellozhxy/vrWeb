@@ -47,23 +47,26 @@ public class DetailController {
 		logger.info("...detail....vid={} decode={}",vid,vid);
 		
 		List<Menu> menus = menuService.queryMenu();
-		List<Video> list1 = videoService.homepageVideos(Lists.newArrayList(1), 3);
-		List<Video> list2 = videoService.homepageVideos(Lists.newArrayList(2), 4);
-		List<Video> list3 = videoService.homepageVideos(Lists.newArrayList(3), 8);
-		List<Video> list4 = videoService.homepageVideos(Lists.newArrayList(4), 8);
+//		List<Video> list1 = videoService.homepageVideos(Lists.newArrayList(1), 3);
+//		List<Video> list2 = videoService.homepageVideos(Lists.newArrayList(2), 4);
+//		List<Video> list3 = videoService.homepageVideos(Lists.newArrayList(3), 8);
+//		List<Video> list4 = videoService.homepageVideos(Lists.newArrayList(4), 8);
 		
 		ModelAndView modelAndView = new ModelAndView("vr/single");
 		
 		modelAndView.addObject("menus", menus);
-		modelAndView.addObject("list1", list1);
-		modelAndView.addObject("list2", list2);
-		modelAndView.addObject("list3", list3);
-		modelAndView.addObject("list4", list4);
+//		modelAndView.addObject("list1", list1);
+//		modelAndView.addObject("list2", list2);
+//		modelAndView.addObject("list3", list3);
+//		modelAndView.addObject("list4", list4);
 		
 		modelAndView.addObject("list1Title", "动画世界");
 		modelAndView.addObject("list2Title", "3D视频");
 		modelAndView.addObject("list3Title", "全景视频");
 		modelAndView.addObject("list4Title", "IMAX视频");
+		
+		Video video = videoService.detail(vid);
+		modelAndView.addObject("video", video);
 		
 		return modelAndView;
 	}
