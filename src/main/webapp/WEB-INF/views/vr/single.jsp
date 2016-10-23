@@ -5,6 +5,42 @@
 <title>视频详情</title>
 <%@include file="../meta.jsp" %>
 <%@include file="../include.jsp" %>
+
+<!--引入引导js 动态下载播放器-->
+<script language="javascript" type="text/javascript" src="<%=path %>sdk/web/player/UtoVRPlayerGuide.js"></script>
+<script type="text/javascript">
+/*播放器参数配置*/
+var vpath = "<%=basePath %>sdk/web/960p.mp4";
+var params = {
+    container: document.getElementById("pano"),
+    name: "videoDetail",
+    dragDirectionMode: true,
+    dragMode: true,
+    scenesArr: [
+        //todo:注意修改视频路径，需要保证播放页面与视频属于同一域名下
+        {
+        	sceneId: "v1", 
+        	sceneName: "赛车", 
+        	sceneFilePath:vpath , 
+        	sceneType: "Video",
+        	isVideoAutoPlay:true
+        }
+    ],
+    //播放器不支持全景播放回调
+    errorCallBack: function (e) {
+        console.log("错误状态：" + e);
+    },
+    //浏览器不支持全屏回调
+    fsCallBack: function (status, playObj) {
+        alert("浏览器不支持全屏！");
+    }
+};
+/*初始化开始*/
+$(function(){
+	initLoad(params);
+});
+</script>
+
 </head>
   <body>
 	<%@include file="../top.jsp" %>
@@ -16,8 +52,8 @@
 						<div class="song-info">
 							<h3>奇幻森林</h3>	
 					</div>
-						<div class="video-grid">
-							<iframe height=498 width=510 src='http://player.youku.com/embed/XMTY4OTY5OTYzMg==' frameborder=0 'allowfullscreen'></iframe>
+						<div class="video-grid" style="width: 800px;height: 500px; margin:10px auto;" id="pano">
+							
 						</div>
 					</div>
 					<div class="song-grid-right">
