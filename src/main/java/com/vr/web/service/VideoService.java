@@ -3,6 +3,7 @@ package com.vr.web.service;
 import java.util.List;
 
 import com.vr.web.model.Video;
+import com.vr.web.vo.VideoVo;
 
 public interface VideoService {
 
@@ -11,7 +12,7 @@ public interface VideoService {
 	 * @param categorys
 	 * @return
 	 */
-	List<Video> homepageVideos(List<Integer> categorys, int limitCount);
+	List<VideoVo> homepageVideos(List<Integer> categorys, int limitCount);
 	
 	/**
 	 * 视频详情

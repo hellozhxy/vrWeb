@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.common.collect.Lists;
 import com.vr.web.model.Menu;
-import com.vr.web.model.Video;
 import com.vr.web.service.MenuService;
 import com.vr.web.service.VideoService;
+import com.vr.web.vo.VideoVo;
 
 /**
  * 
@@ -40,10 +40,10 @@ public class NavigatorController {
 		
 		logger.info("...index....");
 		List<Menu> menus = menuService.queryMenu();
-		List<Video> list1 = videoService.homepageVideos(Lists.newArrayList(1), 3);
-		List<Video> list2 = videoService.homepageVideos(Lists.newArrayList(2), 4);
-		List<Video> list3 = videoService.homepageVideos(Lists.newArrayList(3), 8);
-		List<Video> list4 = videoService.homepageVideos(Lists.newArrayList(4), 8);
+		List<VideoVo> list1 = videoService.homepageVideos(Lists.newArrayList(1), 3);
+		List<VideoVo> list2 = videoService.homepageVideos(Lists.newArrayList(2), 4);
+		List<VideoVo> list3 = videoService.homepageVideos(Lists.newArrayList(3), 8);
+		List<VideoVo> list4 = videoService.homepageVideos(Lists.newArrayList(4), 8);
 		
 		ModelAndView modelAndView = new ModelAndView("vr/index");
 		

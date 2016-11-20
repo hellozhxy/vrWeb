@@ -12,6 +12,7 @@
 		<result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
 		<result column="keywords" jdbcType="VARCHAR" property="keywords" />
 		<result column="path" jdbcType="VARCHAR" property="path" />
+		<result column="url" jdbcType="VARCHAR" property="url" />
 		<result column="play_times" jdbcType="INTEGER" property="playTimes" />
 		<result column="permission" jdbcType="INTEGER" property="permission" />
 		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />

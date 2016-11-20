@@ -1,13 +1,14 @@
-package com.vr.web.model;
+package com.vr.web.vo;
 
 import java.util.Date;
 
 import lombok.Data;
 
+
 @Data
-public class Video {
-	
-	private Long id;
+public class VideoVo{
+
+	private String sid;
 
     private Integer userId;
 
@@ -24,16 +25,7 @@ public class Video {
     private String keywords;
 
     private String path;
-    
-    private String url;
 
     private Integer playTimes;
-
-    private Integer permission;
-
-    private Date createTime;
-
-    private Date lastUpdateTime;
-
-    private Long operatorUserId;
+	
 }

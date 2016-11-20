@@ -7,10 +7,18 @@
 <%@include file="../include.jsp" %>
 
 <!--引入引导js 动态下载播放器-->
+<link href="<%=path%>sdk/web/player/plugin/videoToolBar/style/video.css" rel="stylesheet">
 <script language="javascript" type="text/javascript" src="<%=path %>sdk/web/player/UtoVRPlayerGuide.js"></script>
+<script language="javascript" type="text/javascript" src="<%=path %>sdk/web/player/plugin/videoToolBar/js/UtoVR_Init.js"></script>
 <script type="text/javascript">
-/*播放器参数配置   <%=basePath %>sdk/web/960p.mp4*/
-var vpath = "${video.url}";
+var path = "${video.path}";
+var vpath ;
+if(path == ''){
+	vpath = "<%=basePath %>${video.url}";
+}else{
+	vpath = "${video.path}${video.url}";
+}
+
 var params = {
     container: document.getElementById("pano"),
     name: "videoDetail",
@@ -52,7 +60,7 @@ $(function(){
 						<div class="song-info">
 							<h3>${video.title}</h3>	
 					</div>
-						<div class="video-grid" style="width: 800px;height: 500px; margin:10px auto;" id="pano">
+						<div class="video-grid" style="overflow: hidden; width: 650px; height: 370px; left: 0px; top: 0px; z-index: 0; background-color: black;" id="pano">
 							
 						</div>
 					</div>
@@ -73,21 +81,6 @@ $(function(){
 					</div>
 					<div class="clearfix"> </div>
 					<div class="published">
-							<script>
-								$(document).ready(function () {
-									size_li = $("#myList li").size();
-									x=1;
-									$('#myList li:lt('+x+')').show();
-									$('#loadMore').click(function () {
-										x= (x+1 <= size_li) ? x+1 : size_li;
-										$('#myList li:lt('+x+')').show();
-									});
-									$('#showLess').click(function () {
-										x=(x-1<0) ? 1 : x-1;
-										$('#myList li').not(':lt('+x+')').hide();
-									});
-								});
-							</script>
 							<div class="load_more">	
 								<ul id="myList">
 									<li>
